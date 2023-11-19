@@ -4,3 +4,4 @@ flask
 grand-cypher
 openai
 wikipedia
+arxiv
