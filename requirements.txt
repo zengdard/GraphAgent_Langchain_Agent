@@ -1,4 +1,7 @@
 langchain
 networkx
 flask
+grandcypher
+json
+pickle
 openai
