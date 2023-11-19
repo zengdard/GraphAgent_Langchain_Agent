@@ -3,7 +3,6 @@ import networkx as nx
 from Intelligence_AI_V2 import CognitiveAgent
 from openai import OpenAI
 from os import environ as env
-f
 
 OPENAI_API_KEY = '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'  # Replace with your actual API key
 
