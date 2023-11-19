@@ -10,7 +10,7 @@ OPENAI_API_KEY = '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'  # Replac
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 app = Flask(__name__)
-app.static_folder = 'template'
+app.static_folder = '/template'
 app.secret_key = env.get("APP_SECRET_KEY")
 openai_api_key = env.get("OPENAI_API")
 
@@ -42,7 +42,7 @@ agent = CognitiveAgent(data_path="Parle moi du regain de tensions entre la Coré
 
 @app.route("/", methods=['GET'])
 def home():
-    return render_template("interface_user.html")
+    return render_template("template/interface_user.html")
 
 @app.route("/chat", methods=['POST'])
 def chat():
