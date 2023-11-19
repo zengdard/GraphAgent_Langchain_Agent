@@ -2,14 +2,22 @@ from flask import Flask, render_template, request, jsonify
 import networkx as nx
 from Intelligence_AI_V2 import CognitiveAgent
 from openai import OpenAI
+from os import environ as env
+from dotenv import find_dotenv, load_dotenv
 
 OPENAI_API_KEY = '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'  # Replace with your actual API key
 
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-app = Flask(__name__)
-app.static_folder = 'static'
+
+ENV_FILE = find_dotenv()
+if ENV_FILE:
+    load_dotenv(ENV_FILE)
+
+app = Flask(__name__, static_url_path='/static')
+app.secret_key = env.get("APP_SECRET_KEY")
+openai_api_key = env.get("OPENAI_API")
 
 # Placeholder function for simulating a ChatGPT response
 
@@ -56,6 +64,7 @@ def chat():
         "chatgpt_response": "Chatgpt\n" + chatgpt_response_2
     })
 
+app.debug = True
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=env.get("PORT", 3000))
