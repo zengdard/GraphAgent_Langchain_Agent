@@ -3,3 +3,4 @@ networkx
 flask
 grand-cypher
 openai
+wikipedia
