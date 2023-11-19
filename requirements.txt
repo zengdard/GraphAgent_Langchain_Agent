@@ -1,0 +1,4 @@
+langchain
+networkx
+flask
+openai
