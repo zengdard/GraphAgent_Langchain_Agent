@@ -9,7 +9,7 @@ OPENAI_API_KEY = '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'  # Replac
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-app = Flask(__name__, static_url_path='/template')
+app = Flask(__name__)
 app.secret_key = env.get("APP_SECRET_KEY")
 openai_api_key = env.get("OPENAI_API")
 
