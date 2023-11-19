@@ -278,7 +278,7 @@ class Graph_Agent:
         Thème du graph : {self.data_path}
         
         Voici la demande de l'user {request}
-        Fais ta réponse en citant toujours tes sources précisément par rapport au graph ou à tes recherche brave.
+        Fais ta réponse en citant toujours tes sources précisément par rapport au graph ou à tes recherche brave. De la même manière que Wikipedia fais dans ses articles.
         """
         response = self.agent_executor.run(Prompt_Message_Pre_cognitive_agent)
         return response
