@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div>
+    <div class="bg-gray-200 h-screen">
+        <div class="chat-container mx-auto flex flex-col h-full justify-end p-4">
+          <form id="options-form" class="flex" method="post" action="/process_options">
+            <select id="option-select" name="selected_option" class="px-4 py-2 rounded-lg focus:outline-none">
+                {% for option in options %}
+                    <option value="{{ option.value }}">{{ option.label }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-r-lg">Send</button>
+        </form>
+            <br>
+            <div id="chat-output" class="overflow-y-auto flex flex-col space-y-4 mb-4"></div>
+            <form id="chat-form" class="flex" >
+                <input id="user-input" type="text" class="flex-grow px-4 py-2 rounded-l-lg focus:outline-none" placeholder="Type your message...">
+                <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-r-lg">Send</button>
+            </form>
+            <br>
+            
+        </div>
+       
+
+        <div class="kg-side">
+            <div class="inner-warpper text-center">
+                <img src="{{ url_for('static', filename=img_filename)}}" alt="Plot">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="overlay">
+    <img src="{{ url_for('static', filename='Albatros_cyber.jpg') }}" alt="Image superposée à gauche">
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
