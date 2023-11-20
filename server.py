@@ -52,11 +52,11 @@ def chat():
     # Get the response from your chatbot
     chatbot_response = agent.search(user_message)
     # Simulate a ChatGPT response
-    chatgpt_response_2 = get_chatgpt_response(user_message)
+    
 
     return jsonify({
         "chatbot_response": chatbot_response,
-        "chatgpt_response": "Chatgpt\n" + chatgpt_response_2
+        
     })
 
 app.debug = True
