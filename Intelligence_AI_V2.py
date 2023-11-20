@@ -363,7 +363,7 @@ class CognitiveAgent:
         Use the triplets in your historic to construct your answer or use your tools. If can't answer this, state this clearly in your response.
 
         Respond in accordance with the context of the conversation and the details of the topic discussed. Remember to provide as accurate responses as possible, based solely on the reliable information at your disposal.
-        Return your respone all times.
+        Return your respone all times. And write where you have find the sources.
         
         """
         response = self.agent.run(quest_f)
