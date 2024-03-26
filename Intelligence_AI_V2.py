@@ -14,7 +14,7 @@ from langchain.agents import initialize_agent, Tool, AgentType
 
 wikipedia = WikipediaAPIWrapper()
 arxiv = ArxivAPIWrapper()
-brave = BraveSearch.from_api_key(api_key="BSAzgLCqFawrEF2MvN4tOustnBbkinZ", search_kwargs={"count": 5})
+brave = BraveSearch.from_api_key(api_key="", search_kwargs={"count": 5})
 
 langchain.debug = True  
 
